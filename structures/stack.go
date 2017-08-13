@@ -55,7 +55,6 @@ func (s *Stack) List() []interface{} {
 	return make([]interface{}, 0)
 }
 
-
 // Return stack size
 func (q *Stack) Size() int64 {
 	var size int64
@@ -65,10 +64,9 @@ func (q *Stack) Size() int64 {
 	return size
 }
 
-
 func (s *Stack) String() string {
 	if s.root != nil {
 		return fmt.Sprint(s.List())
 	}
-	return  "<empty>"
+	return "<empty>"
 }

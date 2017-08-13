@@ -33,4 +33,3 @@ func main() {
 	fmt.Println(q.Pop(), q.Pop())
 	fmt.Println("Queue :", q.List())
 }
-

@@ -12,7 +12,7 @@ func (n *SampleNode) String() string {
 
 type SNode struct {
 	Value interface{}
-	Child	 *SNode
+	Child *SNode
 }
 
 func (sNode *SNode) Add(node *SNode) {
@@ -68,9 +68,9 @@ func (sNode *SNode) Count() int64 {
 }
 
 type RNode struct {
-	Value interface{}
-	Parent		*RNode
-	Children	[]*RNode
+	Value    interface{}
+	Parent   *RNode
+	Children []*RNode
 }
 
 func (rNode *RNode) AddNext(node *RNode) {
@@ -79,7 +79,7 @@ func (rNode *RNode) AddNext(node *RNode) {
 
 // Number of Node Elements siblings current
 func (rNode *RNode) LevelSize() int {
-	return  len(rNode.Children)
+	return len(rNode.Children)
 }
 
 // Node Elements siblings of current at given position or nil
@@ -91,11 +91,10 @@ func (rNode *RNode) GetNodeAt(position int) *RNode {
 	return node
 }
 
-
 // Recursive Node Size
 func (rNode *RNode) Size() int64 {
 	var size int64 = int64(rNode.LevelSize())
-	for i:=0; i < rNode.LevelSize(); i++ {
+	for i := 0; i < rNode.LevelSize(); i++ {
 		size += int64(rNode.Children[i].Size())
 	}
 	return size + 1 //Adding current node in size

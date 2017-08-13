@@ -4,8 +4,7 @@ import "fmt"
 
 // NewQueue returns a new queue
 func NewQueue() *Queue {
-	return &Queue{
-	}
+	return &Queue{}
 }
 
 // Queue is a basic FIFO queue based on a circular list that resizes as needed.
@@ -62,5 +61,5 @@ func (q *Queue) String() string {
 	if q.root != nil {
 		return fmt.Sprint(q.List())
 	}
-	return  "<empty>"
+	return "<empty>"
 }
