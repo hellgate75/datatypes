@@ -6,6 +6,12 @@ import "fmt"
 func NewQueue() *Queue {
 	return &Queue{}
 }
+// NewQueue returns a new queue
+func QueueFromRoot(root *SNode) *Queue {
+	return &Queue{
+		root: root,
+	}
+}
 
 // Queue is a basic FIFO queue based on a circular list that resizes as needed.
 type Queue struct {
@@ -42,6 +48,11 @@ func (q *Queue) Size() int64 {
 		size = q.root.Count()
 	}
 	return size
+}
+
+// Return queue Root Element
+func (q *Queue) Root() *SNode {
+	return q.root
 }
 
 // list all nodes from the queue.

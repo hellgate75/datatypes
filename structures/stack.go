@@ -7,6 +7,13 @@ func NewStack() *Stack {
 	return &Stack{}
 }
 
+// NewStack returns a new stack.
+func StackFromRoot(root *SNode) *Stack {
+	return &Stack{
+		root: root,
+	}
+}
+
 // Stack is a basic LIFO stack that resizes as needed.
 type Stack struct {
 	root *SNode
@@ -53,6 +60,11 @@ func (s *Stack) List() []interface{} {
 		return flattenValues
 	}
 	return make([]interface{}, 0)
+}
+
+// Return stack Root Element
+func (s *Stack) Root() *SNode {
+	return s.root
 }
 
 // Return stack size
